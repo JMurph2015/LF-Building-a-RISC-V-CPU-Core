@@ -46,6 +46,7 @@
    $next_pc[31:0] = $reset == 1 ? 32'b0 :
          $pc[31:0] + 32'b100;
    $pc[31:0] = >>1$next_pc[31:0];
+   `READONLY_MEM($pc, $$instr[31:0])
    
    
    

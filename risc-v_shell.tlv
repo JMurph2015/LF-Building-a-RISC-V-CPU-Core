@@ -42,9 +42,11 @@
    
    $reset = *reset;
    
+ 
+   $next_pc[31:0] = $reset == 1 ? 32'b0 :
+         $pc[31:0] + 32'b100;
+   $pc[31:0] = >>1$next_pc[31:0];
    
-   // YOUR CODE HERE
-   // ...
    
    
    // Assert these to end simulation (before Makerchip cycle limit).
